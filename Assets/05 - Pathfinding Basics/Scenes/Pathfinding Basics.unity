@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 8391349331192037907, guid: 44202241c89cf964db65c272a46379c5, type: 3}
-  spacing: 10
+  spacing: 1
   size: {x: 10, y: 10, z: 10}
 --- !u!4 &445551076
 Transform:
