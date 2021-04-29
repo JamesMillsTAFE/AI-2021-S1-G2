@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Steering
@@ -14,7 +12,7 @@ namespace Steering
         public Vector3 Up => transform.up;
 
         public Vector3 CurrentForce => currentForce;
-        [HideInInspector] public Vector3 velocity;
+        [System.NonSerialized] public Vector3 velocity;
 
         public float Speed => speed;
         public float MovementSmoothing => smoothing;
@@ -33,7 +31,7 @@ namespace Steering
         }
 
         public void Initialise(float _speed) => speed = _speed;
-        public void UpdateAgent() => behaviour.UpdateAgent(this);
+        public void UpdateAgent() => behaviour?.UpdateAgent(this);
         public void UpdateCurrentForce(Vector3 _force) => currentForce = _force;
         public void SetColor(Color _color) => renderer.material.color = _color;
 

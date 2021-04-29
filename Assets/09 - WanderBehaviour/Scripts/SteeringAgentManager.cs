@@ -17,7 +17,10 @@ namespace Steering
             // Find every agent in the scene and then initialise them
             agents = FindObjectsOfType<SteeringAgent>();
             foreach(SteeringAgent agent in agents)
+            {
+                agent.transform.parent = transform;
                 agent.Initialise(speed);
+            }
         }
 
         // Update is called once per frame

@@ -19,12 +19,6 @@ namespace Steering
             force += _agent.Right * offset.x;
             force += _agent.Up * offset.y;
 
-            // Here he normalized killing the younglings.
-            force.Normalize();
-
-            // You underestimate my power.
-            _agent.UpdateCurrentForce(force);
-
             // May the force be with you.
             // ANAKIN NOOOOOOO....
             return force;
