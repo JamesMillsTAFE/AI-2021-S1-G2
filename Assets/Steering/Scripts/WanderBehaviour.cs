@@ -7,7 +7,7 @@ namespace Steering
     {
         [SerializeField, Range(.01f, .1f)] private float jitter = .05f;
 
-        protected override Vector3 Calculate(SteeringAgent _agent)
+        public override Vector3 Calculate(SteeringAgent _agent)
         {
             // I have the high ground.
             Vector3 force = _agent.CurrentForce;

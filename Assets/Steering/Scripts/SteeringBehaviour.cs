@@ -12,7 +12,7 @@ namespace Steering
             Quaternion rotation = Quaternion.Slerp(
                 _agent.Rotation,
                 Quaternion.LookRotation(_agent.CurrentForce != Vector3.zero ? _agent.CurrentForce : Vector3.one),
-                Time.deltaTime);
+                Time.deltaTime * 10f);
 
             Vector3 movement = (_agent.Forward + force * _agent.Speed) * Time.deltaTime;
             Vector3 position = Vector3.SmoothDamp(
@@ -24,6 +24,6 @@ namespace Steering
             _agent.SetPosAndRot(position, rotation);
         }
 
-        protected abstract Vector3 Calculate(SteeringAgent _agent);
+        public abstract Vector3 Calculate(SteeringAgent _agent);
     }
 }
